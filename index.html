@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Curso Basico de Vue.js | Platzi</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div id="app" v-bind:style="{ background: '#' + color }">
+    <!-- se usa v-bind  -->
+    <!-- <img 
+    v-on:mouseover="toggleShowPrices"
+    v-on:mouseout="toggleShowPrices"
+    v-bind:src="img" v-bind:alt="name"> -->
+    <!-- <h1 v-bind:class="changePercent > 0 ? 'green' : 'red' ">
+      {{ title }}
+      <!-- v--if para decirle al html que muestre ese objeto en caso de que secumpla la condicion en este caso el v-if remueve el elemento del dom-->
+      <!-- <span v-if="changePercent > 0">文字</span>
+      <span v-else-if="changePercent < 0">文</span>
+      <span v-else> 絵,</span> -->
+
+      <!-- v--show para decirle al html que muestre ese objeto en caso de que secumpla la condicion en este caso el v-show oculta el elemento para que no se vea en el dom, este es el mas usado si las cosas cambian continuamente -->
+      <!-- <span v-show="changePercent > 0">文字</span>
+      <span v-show="changePercent < 0">文</span>
+      <span v-show="changePercent == 0 "> 絵,</span> -->
+      
+    <!-- v-on es una directiva que permite decirle a vue ante determinado evento ejecuta tal codigo -->
+    <!-- <span v-on:click="toggleShowPrices">
+      {{ showPrices ? 'hi' : 'ho' }}
+    </span>
+    </h1> --> 
+    <!-- hay que usar v-bind  para uqe las propiedades tomen valores dinamicos-->
+    <coin-detail v-on:change-color="updateColor" v-bind:coin="btc">
+      <template v-slot:text>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo maxime exercitationem tempora explicabo, aspernatur animi autem amet necessitatibus. Facere commodi repellat fugiat at provident, laborum vitae quibusdam quaerat totam doloremque?</p>
+      </template>
+      <template v-slot:link>
+        <a href="#">hola hola</a>
+      </template>
+    </coin-detail>
+<!-- v-model: permite linkear las cosas que puede escribibir  el usuario a traves de un input con las propiedades efinidas dentro de data esto permite que el codigo se refresque el codigo y se actualice la vista -->
+    <!-- <input type="number" v-model="value">
+    <span>{{ convertedValue }} </span> -->
+    
+   
+    
+<!-- v-for es una directiva comun permite renderizar arrays o listas dentro de html, para el ejemplo de abajo tomamos a prices que es la propiedad dentro dd data y p es la representacion, al finar solo hay que usar una expresion par llamar a los valores -->
+<!-- otra cosa que se puede hacer con v-for es acceder al elemento indice que representa a cada elemento dentro del array para eso se debe usar la anotacion de parentesis  y solicitarlo como una expresion-->
+    <!-- <ul>
+      <li v-for="(p, i) in prices" v-bind:key="p">
+        {{ i }} - {{ p }}
+      </li>
+    </ul> -->
+
+    
+    <!-- en este caso como p representa un objeto podemos acceder a sus propiedades  -->
+        <!-- <ul v-show=showPrices>
+          <!-- manerade usar v-bind con objetos se da una clase y condicion buleana que le diga donde aplicar la clase se puden combinar clase default y dinamicas -->
+          <!-- <li v-bind:class="{ orange: p.value == price, red: p.value < price, green: p.value > price }" v-for="(p, i) in pricesWithDays" v-bind:key="p.day">
+            {{ i }} - {{p.day}} - {{ p.value }}
+          </li>
+        </ul> --> 
+
+    <!-- <coin-detail
+      v-on:change-color="updateColor"
+      v-bind:coin="btc">
+
+
+      <template v-slot:text>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, aperiam? Non dignissimos nam, voluptatem ducimus eos, pariatur dolor quisquam at asperiores praesentium molestias recusandae cum inventore, omnis consequatur? Voluptate, quo?</p>
+      </template>
+
+      <template v-slot:link>
+        <a href="#">Link!</a>
+      </template>
+    </coin-detail> -->
+<!-- se tra la herramienta Vue de la pagina oficial -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  </div>
+  
+
+  <script src="app.js"></script>
+</body>
+</html>
+
+<!-- el sistema de componentese slasegunda funcionabilidad importante que tiene vue.js, esta basado en la especificacion de web componentes API,  cada componente es reutilizable y tiene logica, estructura y diseño, tiene semantica en el codigo gracias a esto. -->
+
+Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi aspernatur doloribus necessitatibus quibusdam incidunt adipisci sint tenetur tempore similique dignissimos amet culpa voluptate molestias fuga, reprehenderit quae, aliquid, pariatur esse!
